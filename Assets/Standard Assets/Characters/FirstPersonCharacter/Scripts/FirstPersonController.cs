@@ -271,7 +271,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					if (other.CompareTag("Gem2")) {
 						Destroy(other.gameObject);
 						c = new Color(0.5f,0,0.5f);
-						m_JumpSpeed = 2;
+						m_JumpSpeed = 5;
 						m_WalkSpeed = 0;
 						m_RunSpeed = 50;
 						ActivateWithTag("Gem3");
@@ -283,6 +283,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						m_WalkSpeed = 7;
 						m_RunSpeed = 20;
 						ActivateWithTag("Gem4");
+					}
+					if (other.CompareTag("Gem4")) {
+						Destroy(other.gameObject);
+						c = new Color(1f,1f,0.5f);
+						m_JumpSpeed = 0;
+						m_WalkSpeed = 1;
+						m_RunSpeed = 5;
+						ActivateWithTag("Gem5");
 					}
 				}
 				void ActivateWithTag(string tag) {

@@ -267,6 +267,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						m_WalkSpeed = 30;
 						ActivateWithTag("Gem2");
 					}
+					if (other.CompareTag("Gem2")) {
+						Destroy(other.gameObject);
+						c = new Color(0.5f,0,0.5f);
+						m_JumpSpeed = 50;
+						m_WalkSpeed = 0;
+						m_RunSpeed = 50;
+						ActivateWithTag("Gem3");
+					}
 				}
 				void ActivateWithTag(string tag) {
 					foreach (Transform go in Resources.FindObjectsOfTypeAll<Transform>()) {

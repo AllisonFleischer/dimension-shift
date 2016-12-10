@@ -140,7 +140,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_JumpSpeed
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_Icon
@@ -699,7 +699,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 2
-  m_Color: {r: 0.863, g: 0.422, b: 0.256, a: 1}
+  m_Color: {r: 0.029411793, g: 0.029411793, b: 0.029411793, a: 1}
   m_Intensity: 8
   m_Range: 100
   m_SpotAngle: 30

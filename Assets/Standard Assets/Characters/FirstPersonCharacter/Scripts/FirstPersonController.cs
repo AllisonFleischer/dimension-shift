@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				private bool m_Jumping;
 				private AudioSource m_AudioSource;
 
+				public static Color c = new Color(1,1,1);
+
 				// Use this for initialization
 				private void Start()
 				{
@@ -260,6 +262,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				{
 					if (other.CompareTag("Gem1")) {
 						Destroy(other.gameObject);
+						c = new Color(0,1,1);
+						m_JumpSpeed = 50;
+						m_WalkSpeed = 30;
+						ActivateWithTag("Gem2");
+					}
+				}
+				void ActivateWithTag(string tag) {
+					foreach (Transform go in Resources.FindObjectsOfTypeAll<Transform>()) {
+						if (go.gameObject.CompareTag(tag)) {go.gameObject.SetActive(true);}
 					}
 				}
 		}

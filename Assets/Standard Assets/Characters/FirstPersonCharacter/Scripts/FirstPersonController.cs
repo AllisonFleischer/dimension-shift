@@ -264,13 +264,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						Destroy(other.gameObject);
 						c = new Color(0,1,1);
 						m_JumpSpeed = 50;
-						m_WalkSpeed = 30;
+						m_WalkSpeed = 10;
+						m_RunSpeed = 30;
 						ActivateWithTag("Gem2");
 					}
 					if (other.CompareTag("Gem2")) {
 						Destroy(other.gameObject);
 						c = new Color(0.5f,0,0.5f);
-						m_JumpSpeed = 50;
+						m_JumpSpeed = 2;
 						m_WalkSpeed = 0;
 						m_RunSpeed = 50;
 						ActivateWithTag("Gem3");

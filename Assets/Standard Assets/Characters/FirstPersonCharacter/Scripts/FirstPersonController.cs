@@ -46,6 +46,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				public static bool rot = false;
 				public static bool manualrot = false;
 				public static Vector3 rotdeg = new Vector3(0,0,0);
+				public static bool manualreset = false;
 
 				// Use this for initialization
 				private void Start()
@@ -325,6 +326,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						manualrot = true;
 						rotdeg = new Vector3(270, 0, 0);
 						ActivateWithTag("Gem8");
+					}
+					if (other.CompareTag("Gem8")) {
+						Destroy(other.gameObject);
+						c = new Color(1f,0.5f,0f);
+						m_JumpSpeed = 50;
+						m_WalkSpeed = 20;
+						m_RunSpeed = 25;
+						m_GravityMultiplier = 2f;
+						rot = false;
+						manualreset = true;
+						manualrot = true;
+						rotdeg = new Vector3(0, 0, 0);
+						ActivateWithTag("Gem9");
 					}
 				}
 				void ActivateWithTag(string tag) {

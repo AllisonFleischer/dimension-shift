@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RoomRot : MonoBehaviour {
 
-	private float velx = 0.0f;
-
 	// Use this for initialization
 	void Start () {
 
@@ -17,8 +15,17 @@ public class RoomRot : MonoBehaviour {
 			float rot = -1 * Time.deltaTime * 10;
 			transform.Rotate(rot, 0, 0);
 		} else if (UnityStandardAssets.Characters.FirstPerson.FirstPersonController.manualrot) {
-			float newx = Mathf.SmoothDamp(transform.eulerAngles.x, UnityStandardAssets.Characters.FirstPerson.FirstPersonController.rotdeg.x, ref velx, 1);
-			transform.eulerAngles = new Vector3 (newx, 0, 0);
+			UnityStandardAssets.Characters.FirstPerson.FirstPersonController.manualrot = false;
+			StartCoroutine(RotateMe(UnityStandardAssets.Characters.FirstPerson.FirstPersonController.rotdeg, 10));
+		}
+	}
+
+	IEnumerator RotateMe(Vector3 byAngles, float inTime) {
+		var fromAngle = transform.rotation;
+		var toAngle = Quaternion.Euler(byAngles);
+		for(var t = 0f; t < 1; t += Time.deltaTime/inTime) {
+			transform.rotation = Quaternion.Lerp(fromAngle, toAngle, t);
+			yield return null;
 		}
 	}
 }

@@ -12,6 +12,8 @@ TagManager:
   - Gem6
   - Gem7
   - Gem8
+  - Gem9
+  - Gem10
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,8 @@ public class RoomRot : MonoBehaviour {
 		if (UnityStandardAssets.Characters.FirstPerson.FirstPersonController.rot) {
 			float rot = -1 * Time.deltaTime * 10;
 			transform.Rotate(rot, 0, 0);
+		} else if (UnityStandardAssets.Characters.FirstPerson.FirstPersonController.manualrot) {
+			transform.eulerAngles = UnityStandardAssets.Characters.FirstPerson.FirstPersonController.rotdeg;
 		}
 	}
 }

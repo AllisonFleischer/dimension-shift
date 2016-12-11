@@ -44,6 +44,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 				public static Color c = new Color(1,1,1);
 				public static bool rot = false;
+				public static bool manualrot = false;
+				public static Vector3 rotdeg = new Vector3(0,0,0);
 
 				// Use this for initialization
 				private void Start()
@@ -320,6 +322,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						m_RunSpeed = 25;
 						m_GravityMultiplier = 0.5f;
 						rot = false;
+						manualrot = true;
+						rotdeg = new Vector3(270, 0, 0);
 						ActivateWithTag("Gem8");
 					}
 				}

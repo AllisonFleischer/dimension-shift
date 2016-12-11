@@ -43,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				private AudioSource m_AudioSource;
 
 				public static Color c = new Color(1,1,1);
+				public static bool rot = false;
 
 				// Use this for initialization
 				private void Start()
@@ -291,6 +292,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						m_WalkSpeed = 1;
 						m_RunSpeed = 5;
 						ActivateWithTag("Gem5");
+					}
+					if (other.CompareTag("Gem5")) {
+						Destroy(other.gameObject);
+						c = new Color(0f,0f,1f);
+						m_JumpSpeed = 500;
+						m_WalkSpeed = 5;
+						m_RunSpeed = 10;
+						m_GravityMultiplier = 20;
+						ActivateWithTag("Gem6");
+					}
+					if (other.CompareTag("Gem6")) {
+						Destroy(other.gameObject);
+						c = new Color(1f,0f,0f);
+						m_JumpSpeed = 10;
+						m_WalkSpeed = 20;
+						m_RunSpeed = 25;
+						m_GravityMultiplier = 2;
+						rot = true;
+						ActivateWithTag("Gem7");
 					}
 				}
 				void ActivateWithTag(string tag) {

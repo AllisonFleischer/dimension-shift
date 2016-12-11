@@ -306,11 +306,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						Destroy(other.gameObject);
 						c = new Color(1f,0f,0f);
 						m_JumpSpeed = 10;
-						m_WalkSpeed = 20;
-						m_RunSpeed = 25;
+						m_WalkSpeed = 10;
+						m_RunSpeed = 15;
 						m_GravityMultiplier = 2;
 						rot = true;
 						ActivateWithTag("Gem7");
+					}
+					if (other.CompareTag("Gem7")) {
+						Destroy(other.gameObject);
+						c = new Color(0.5f,0f,1f);
+						m_JumpSpeed = 10;
+						m_WalkSpeed = 20;
+						m_RunSpeed = 25;
+						m_GravityMultiplier = 0.5f;
+						rot = false;
+						ActivateWithTag("Gem8");
 					}
 				}
 				void ActivateWithTag(string tag) {

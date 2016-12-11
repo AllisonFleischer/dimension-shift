@@ -7,6 +7,6 @@ public class LightMod : MonoBehaviour {
 		lt = GetComponent<Light>();
 	}
 	void Update() {
-		lt.color = UnityStandardAssets.Characters.FirstPerson.FirstPersonController.c;
+		lt.color = UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.c;
 	}
 }

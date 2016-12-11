@@ -11,7 +11,7 @@ public class RoomRot : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (UnityStandardAssets.Characters.FirstPerson.FirstPersonController.rot) {
+		if (UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.rot) {
 			float rot = -1 * Time.deltaTime * 10;
 			transform.Rotate(rot, 0, 0);
 		}

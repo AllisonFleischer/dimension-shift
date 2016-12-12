@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -48,6 +49,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				public static Vector3 rotdeg = new Vector3(0,0,0);
 				public static bool startphysics = false;
 				public static bool freeze = false;
+
+				public float TransitionTime;
+				public AudioMixerSnapshot StartMusic;
+				public AudioMixerSnapshot Gem1;
+				public AudioMixerSnapshot Gem2;
+				public AudioMixerSnapshot Gem3;
+				public AudioMixerSnapshot Gem4;
+				public AudioMixerSnapshot Gem5;
 
 				// Use this for initialization
 				private void Start()
@@ -266,6 +275,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				private void OnTriggerEnter(Collider other)
 				{
 					if (other.CompareTag("Gem1")) {
+						Gem1.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(0,1,1);
 						m_JumpSpeed = 50;
@@ -274,6 +284,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem2");
 					}
 					if (other.CompareTag("Gem2")) {
+						Gem2.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(0.5f,0,0.5f);
 						m_JumpSpeed = 5;
@@ -282,6 +293,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem3");
 					}
 					if (other.CompareTag("Gem3")) {
+						Gem3.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(0f,1f,0f);
 						m_JumpSpeed = 30;
@@ -290,6 +302,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem4");
 					}
 					if (other.CompareTag("Gem4")) {
+						Gem4.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(1f,1f,0.5f);
 						m_JumpSpeed = 0;
@@ -298,6 +311,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem5");
 					}
 					if (other.CompareTag("Gem5")) {
+						Gem5.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(0f,0f,1f);
 						m_JumpSpeed = 500;

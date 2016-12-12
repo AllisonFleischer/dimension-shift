@@ -57,6 +57,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				public AudioMixerSnapshot Gem3;
 				public AudioMixerSnapshot Gem4;
 				public AudioMixerSnapshot Gem5;
+				public AudioMixerSnapshot Gem6;
+				public AudioMixerSnapshot Gem7;
+				public AudioMixerSnapshot Gem8;
+				public AudioMixerSnapshot Gem9;
+				public AudioMixerSnapshot Gem10;
 
 				// Use this for initialization
 				private void Start()
@@ -321,6 +326,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem6");
 					}
 					if (other.CompareTag("Gem6")) {
+						Gem6.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(1f,0f,0f);
 						m_JumpSpeed = 10;
@@ -331,6 +337,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem7");
 					}
 					if (other.CompareTag("Gem7")) {
+						Gem7.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(0.5f,0f,1f);
 						m_JumpSpeed = 10;
@@ -343,6 +350,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem8");
 					}
 					if (other.CompareTag("Gem8")) {
+						Gem8.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(1f,0.5f,0f);
 						m_JumpSpeed = 50;
@@ -355,6 +363,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem9");
 					}
 					if (other.CompareTag("Gem9")) {
+						Gem9.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(0.5f,0.5f,0.5f);
 						m_JumpSpeed = 50;
@@ -367,6 +376,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						ActivateWithTag("Gem10");
 					}
 					if (other.CompareTag("Gem10")) {
+						Gem10.TransitionTo(TransitionTime);
 						Destroy(other.gameObject);
 						c = new Color(1f,1f,1f);
 						m_JumpSpeed = 10;
@@ -376,6 +386,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						manualrot = true;
 						rotdeg = new Vector3(0, 0, 0);
 						freeze = true;
+					}
+					if (other.CompareTag("Respawn")) {
+						if (freeze) {Debug.Log("THE END");}
+						else {transform.position = new Vector3(0,-8,0);}
 					}
 				}
 				void ActivateWithTag(string tag) {

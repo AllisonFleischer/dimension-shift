@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -388,7 +389,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 						freeze = true;
 					}
 					if (other.CompareTag("Respawn")) {
-						if (freeze) {Debug.Log("THE END");}
+						if (freeze) {SceneManager.LoadScene("end");}
 						else {transform.position = new Vector3(0,-8,0);}
 					}
 				}

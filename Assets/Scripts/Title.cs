@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour {
 
+	public bool isTitle = true;
+
 	// Use this for initialization
 	void Start () {
 
@@ -12,8 +14,11 @@ public class Title : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Jump")) {
+		if ((Input.GetButtonDown("Jump")) && (isTitle)) {
 			SceneManager.LoadScene("main");
+		}
+		if (Input.GetButtonDown("Cancel")) {
+			Application.Quit();
 		}
 	}
 }
